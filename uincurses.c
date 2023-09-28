@@ -39,7 +39,7 @@ void	call_chosen_func(int chosen_func)
 	if (chosen_func == 0)
 	{
 		mvwprintw(stdscr, LINES - 1, 0, "add_contact      ");
-		add_contact();
+		//add_contact();
 	}
 	if (chosen_func == 1)
 	{

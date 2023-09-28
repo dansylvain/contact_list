@@ -13,11 +13,27 @@ enum	left_or_right {
 	right
 };
 
+enum Pokemon
+{
+	Pikachu,
+	Charizard,
+	Bulbasaur,
+	Squirtle,
+	Eevee,
+	Jigglypuff,
+	Meowth,
+	Snorlax,
+	Mewtwo,
+	Psyduck
+};
+
+
 
 typedef struct Contact {
 	char	name[21];
-	char	phone_number[21];
 	char	email[31];
+	char	stone_skipping_record[10];
+	char	favourite_pokemon[15];
     struct Contact *next;
 	struct Contact *previous;
 	
@@ -26,7 +42,7 @@ typedef struct Contact {
 extern	Contact	*head;
 extern	Contact	*tail;
 
-void	create_contact_node(char *name, char *phone_number, char *email);
+void	create_contact_node(char *name, char *email, char *stone_skipping_record, char *favourite_pokemon);
 Contact	*get_node(char	*name);
 void	free_node(Contact *ptr);
 void	free_list(void);
@@ -47,6 +63,8 @@ void	display_contacts();
 void	add_contact();
 void	gui(void);
 int	get_contacts_qtty(void);
+void	display_content_popup_win(WINDOW *popup_win, int left_item_selected);
+
 
 
 #endif
