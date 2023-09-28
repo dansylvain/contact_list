@@ -15,7 +15,7 @@ int	get_contacts_qtty(void)
 	return (i);
 }
 
-void	create_contact_node(char *name, char *phone_number, char *email)
+void	create_contact_node(char *name, char *email, char *stone_skipping_record, char *favourite_pokemon)
 {
 	Contact	*new_contact;
 
@@ -26,8 +26,9 @@ void	create_contact_node(char *name, char *phone_number, char *email)
 		return;
 	}
 	strncpy(new_contact->name, name, 20);
-	strncpy(new_contact->phone_number, phone_number, 20);
 	strncpy(new_contact->email, email, 30);
+	strncpy(new_contact->stone_skipping_record, stone_skipping_record, 9);
+	strncpy(new_contact->favourite_pokemon, favourite_pokemon, 14);
 	new_contact->next = NULL;
 	new_contact->previous = NULL;
 	
