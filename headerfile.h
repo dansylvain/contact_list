@@ -46,6 +46,7 @@ void	start_ncurses_ui(void);
 void	display_contacts();
 void	add_contact();
 void	gui(void);
+int	get_contacts_qtty(void);
 
 
 #endif

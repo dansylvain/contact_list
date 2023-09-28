@@ -1,5 +1,20 @@
 #include "headerfile.h"
 
+int	get_contacts_qtty(void)
+{
+	Contact *current;
+	
+	current = head;
+	int	i;
+	i = 0;
+	while (current)
+	{
+		current = current->next;
+		i++;
+	}
+	return (i);
+}
+
 void	create_contact_node(char *name, char *phone_number, char *email)
 {
 	Contact	*new_contact;
