@@ -34,8 +34,8 @@ typedef struct Contact {
 	char	email[31];
 	char	stone_skipping_record[10];
 	char	favourite_pokemon[15];
-    struct Contact *next;
-	struct Contact *previous;
+    struct 	Contact *next;
+	struct 	Contact *previous;
 	
 } Contact;
 
@@ -72,11 +72,13 @@ void	display_content_input_win(WINDOW *input_win, enum left_or_right side, int l
 void	display_content_display_win(WINDOW *display_win, enum left_or_right side, int right_item_selected);
 Contact	*handle_functions_win_choice(WINDOW *popup_win, int left_item_selected);
 void	handle_display_win_choice(WINDOW *display_win, int right_item_selected);
-void	handle_input_win_choice(WINDOW *input_win, int left_item_selected);
+void	handle_input_win_choice(WINDOW *input_win, int right_item_selected, int	left_item_selected);
 char	*get_field(Contact *contact, int i);
 int	get_node_index(Contact *node);
 Contact	*get_contact(int i);
-
-
+int	ask_confirmation();
+char	*get_field_name(int i);
+int	get_input_str_len(int i);
+int	get_field_name_len(int i);
 
 #endif
