@@ -66,14 +66,15 @@ void	prompting_loop(WINDOW	*func_win, WINDOW *input_win, WINDOW *display_win, WI
 		{
 			if (side == left && left_item_selected < 3)
 			{
-				popup_win = create_popup_win();
-				
-				display_content_popup_win(popup_win, left_item_selected);
+				right_item_selected = get_node_index(handle_functions_win_choice(popup_win, left_item_selected));
 			}
 			else if (side == left)
-				mvprintw(LINES - 1, 0, "%i      ", left_item_selected - 3);
+			{
+				handle_input_win_choice(input_win, left_item_selected);
+
+			}
 			else
-				mvprintw(LINES - 1, 0, "%i      ", right_item_selected);
+				handle_display_win_choice(display_win, right_item_selected);
 		}
 	}
 }

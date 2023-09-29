@@ -65,8 +65,6 @@ Contact	*get_node(char	*name)
 		if (!strncmp(current->name, name, 20))
 			return (current);
 		current = current->next;
-		if(current == NULL)
-			printf("Contact not found\n");
 	}
 	return (NULL);
 }

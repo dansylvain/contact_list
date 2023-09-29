@@ -82,16 +82,27 @@ void	display_content_display_win(WINDOW *display_win, enum left_or_right side, i
 	}	
 }
 
-void	display_content_popup_win(WINDOW *popup_win, int left_item_selected)
+void	handle_display_win_choice(WINDOW *display_win, int right_item_selected)
 {
-	box(popup_win, 0, 0);
+	WINDOW *popup_win;
+	popup_win = create_popup_win();
+}
+
+
+void	handle_input_win_choice(WINDOW *input_win, int left_item_selected)
+{
+	WINDOW *popup_win;
+	popup_win = create_popup_win();
+	getch();
+}
+
+
+Contact	*handle_functions_win_choice(WINDOW *popup_win, int left_item_selected)
+{
 	if (left_item_selected == 0)
-	{
 		add_contact();
-	}
 	if (left_item_selected == 1)
-		wprintw(popup_win, ". Search Contact");
+		return (search_contact());
 	if (left_item_selected == 2)
-		wprintw(popup_win, ". Delete Contact");
-	wrefresh(popup_win);
+		remove_contact();
 }
