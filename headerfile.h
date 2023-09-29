@@ -47,7 +47,7 @@ Contact	*get_node(char	*name);
 void	free_node(Contact *ptr);
 void	free_list(void);
 void	prompt_command(void);
-void	remove_contact(Contact *node);
+void	remove_contact(void);
 Contact	*search_contact(void);
 void	display_contact(void);
 void	swap_nodes(Contact *node1, Contact *node2);
@@ -70,8 +70,11 @@ WINDOW	*create_popup_win();
 void	display_content_func_win(WINDOW *func_win, enum left_or_right side, int left_item_selected);
 void	display_content_input_win(WINDOW *input_win, enum left_or_right side, int left_item_selected, int right_item_selected);
 void	display_content_display_win(WINDOW *display_win, enum left_or_right side, int right_item_selected);
-void	display_content_popup_win(WINDOW *popup_win, int left_item_selected);
+Contact	*handle_functions_win_choice(WINDOW *popup_win, int left_item_selected);
+void	handle_display_win_choice(WINDOW *display_win, int right_item_selected);
+void	handle_input_win_choice(WINDOW *input_win, int left_item_selected);
 char	*get_field(Contact *contact, int i);
+int	get_node_index(Contact *node);
 Contact	*get_contact(int i);
 
 

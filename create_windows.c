@@ -25,5 +25,6 @@ WINDOW	*create_popup_win()
 {
 	WINDOW	*popup_win;
 	popup_win = newwin(LINES / 2 - 1, COLS / 2 - 1, LINES / 4, COLS / 4);
+	box(popup_win, 0, 0);
 	return (popup_win);
 }
