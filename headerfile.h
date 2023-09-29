@@ -63,7 +63,16 @@ void	display_contacts();
 void	add_contact();
 void	gui(void);
 int	get_contacts_qtty(void);
+WINDOW	*create_func_win();
+WINDOW	*create_input_win();
+WINDOW	*create_display_win();
+WINDOW	*create_popup_win();
+void	display_content_func_win(WINDOW *func_win, enum left_or_right side, int left_item_selected);
+void	display_content_input_win(WINDOW *input_win, enum left_or_right side, int left_item_selected, int right_item_selected);
+void	display_content_display_win(WINDOW *display_win, enum left_or_right side, int right_item_selected);
 void	display_content_popup_win(WINDOW *popup_win, int left_item_selected);
+char	*get_field(Contact *contact, int i);
+Contact	*get_contact(int i);
 
 
 
