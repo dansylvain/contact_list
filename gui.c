@@ -70,13 +70,49 @@ void	prompting_loop(WINDOW	*func_win, WINDOW *input_win, WINDOW *display_win, WI
 			}
 			else if (side == left)
 			{
-				handle_input_win_choice(input_win, left_item_selected);
+				handle_input_win_choice(input_win, right_item_selected, left_item_selected);
 
 			}
 			else
 				handle_display_win_choice(display_win, right_item_selected);
 		}
 	}
+}
+
+void	handle_display_win_choice(WINDOW *display_win, int right_item_selected)
+{
+	WINDOW *popup_win;
+	popup_win = create_popup_win();
+	wprintw(popup_win, ". Display win ");
+	wrefresh(popup_win);
+	getch();
+}
+
+
+void	handle_input_win_choice(WINDOW *input_win, int right_item_selected, int	left_item_selected)
+{
+	WINDOW *popup_win;
+	char	data[20];
+	echo();
+	curs_set(1);
+
+	popup_win = newwin(1, 60, LINES / 2 + left_item_selected + 1, 5);
+	wprintw(popup_win, "%s ", get_field_name(left_item_selected - 3));
+	mvwgetnstr(popup_win, 0, get_field_name_len(left_item_selected - 3), data, 30);
+	strncpy(get_field(get_contact(right_item_selected), left_item_selected - 3), data, get_input_str_len(left_item_selected - 3));
+
+	wrefresh(popup_win);
+	}
+
+
+Contact	*handle_functions_win_choice(WINDOW *popup_win, int left_item_selected)
+{
+	if (left_item_selected == 0)
+		add_contact();
+	if (left_item_selected == 1)
+		return (search_contact());
+	if (left_item_selected == 2)
+		remove_contact();
 }
 
 void	gui(void)

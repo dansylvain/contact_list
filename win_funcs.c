@@ -1,5 +1,11 @@
 #include "headerfile.h"
 
+int	ask_confirmation()
+{
+	return (1);
+}
+
+
 char	*get_field(Contact *contact, int i)
 {
 	char	*field[] = {
@@ -9,6 +15,40 @@ char	*get_field(Contact *contact, int i)
 		contact->favourite_pokemon
 	};
 	return (field[i]);
+}
+
+
+int	get_input_str_len(int i)
+{
+	int	input_str_len[] = {
+		20,
+		30,
+		10,
+		15
+	};
+	return (input_str_len[i]);
+}
+
+char	*get_field_name(int i)
+{
+	char	*field_name[] = {
+		"Name: ",
+		"E-mail: ",
+		"Stone skipping record: ",
+		"Favourite Pokemon: "
+	};
+	return (field_name[i]);
+};
+
+int	get_field_name_len(int i)
+{
+	int	field_name_len[] = {
+		6,
+		8,
+		23,
+		19
+	};
+	return (field_name_len[i]);
 }
 
 Contact	*get_contact(int i)
