@@ -7,10 +7,10 @@ void	create_dummy_content(void)
 {
 	create_contact_node("Dan", "danmail@blabla.com", "42", "Pikachu");
 	create_contact_node("Seb", "sebtheman@ouioui.fr", "007", "Charizard");
-	create_contact_node("Marie", "mariamaria@aimemoi.encore", "69", "Bulbasaur");
+	create_contact_node("Mary", "mariamaria@pouet.pouet", "66", "Bulbasaur");
 	create_contact_node("Vlad", "warnomore@end.slash", "76", "Squirtle");
 	create_contact_node("Tom", "c'estpasbientôtfini?@nul.c", "01", "Eevee");
-	create_contact_node("Flo", "sausage@gmail.com", "88", "Jigglypuff");
+	create_contact_node("Beth", "sausage@gmail.com", "88", "Jigglypuff");
 	create_contact_node("Pug", "noway@hotmail.com", "32", "Meowth");
 	create_contact_node("Liam", "wtf@yahoo.com", "118", "Snorlax");
 }
